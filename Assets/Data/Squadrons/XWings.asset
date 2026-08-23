@@ -17,4 +17,4 @@ MonoBehaviour:
   damage: 3
   shields: 2
   speed: 2
-  prefab: {fileID: 6686900644953531730, guid: 4afeaa48f43d11f4b9d841f468eff2cf, type: 3}
+  prefab: {fileID: 8891510661017835739, guid: e64d7e00a73f646438200c41b7273c78, type: 3}
