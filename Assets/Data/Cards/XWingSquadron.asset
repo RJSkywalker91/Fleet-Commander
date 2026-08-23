@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8cdbe9fef59230c41b6fdd2091614560, type: 3}
+  m_Name: XWingSquadron
+  m_EditorClassIdentifier: Assembly-CSharp::SquadronCardDefinition
+  type: 0
+  displayName: X Wing Squadron
+  supplyCost: 2
+  prefab: {fileID: 3906177999576761626, guid: 2abdcd204099be34b812a04f249ed6eb, type: 3}
+  squadron: {fileID: 11400000, guid: 9c06171f0aad65243a3604db3e9ec5c4, type: 2}
