@@ -63,4 +63,11 @@ public class Squadron : MonoBehaviour
     CurrentHealth -= remainingDamage;
   }
   
+  private void OnDrawGizmos()
+  {
+    if (targetPosition == null)
+      return;
+
+    Gizmos.DrawLine(transform.position, targetPosition.Value);
+  }
 }

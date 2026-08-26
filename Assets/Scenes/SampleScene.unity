@@ -447,7 +447,55 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BattleController
   squadronSpawner: {fileID: 2105636076}
   cardSpawner: {fileID: 1186217633}
+  battleGrid: {fileID: 1505269185}
   test: {fileID: 11400000, guid: b0be36543700db84e84b792c99db29f3, type: 2}
+--- !u!1 &1505269184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1505269186}
+  - component: {fileID: 1505269185}
+  m_Layer: 0
+  m_Name: BattleGrid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1505269185
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505269184}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a312d7fd98cd634438d06050b1fbd474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BattleGrid
+  width: 10
+  height: 6
+  cellSize: 1
+--- !u!4 &1505269186
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1505269184}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.66897, y: 0.38568, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2105636075
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,3 +549,4 @@ SceneRoots:
   - {fileID: 1495329130}
   - {fileID: 1186217634}
   - {fileID: 2105636077}
+  - {fileID: 1505269186}

@@ -2,26 +2,26 @@ using UnityEngine;
 
 public class BattleController : MonoBehaviour
 {
-    [SerializeField]
-    private SquadronSpawner squadronSpawner;
+    [SerializeField] private SquadronSpawner squadronSpawner;
 
-    [SerializeField]
-    private CardSpawner cardSpawner;
+    [SerializeField] private CardSpawner cardSpawner;
 
-    [SerializeField]
-    private CardDefinition test;
+    [SerializeField] private BattleGrid battleGrid;
+
+    [SerializeField] private CardDefinition test;
 
     private void OnCardPlayed(Card card)
     {
       Debug.Log($"Played {card.Definition.displayName}");
       if (card.Definition is SquadronCardDefinition squadronCard)
       {
+        Vector3 spawnPosition = battleGrid.GetCellCenter(0, 0);
         Squadron squadron = squadronSpawner.Spawn(
           squadronCard.squadron,
-          Vector3.zero
+          spawnPosition
         );
         Destroy(card.gameObject);
-        squadron.MoveTo(new Vector3(5, 2, 0));
+        squadron.MoveTo(battleGrid.GetCellCenter(5, 2));
       }
     }
 
