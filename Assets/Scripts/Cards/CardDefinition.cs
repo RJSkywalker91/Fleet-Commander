@@ -12,6 +12,4 @@ public class CardDefinition : ScriptableObject
   public CardType type;
   public string displayName;
   public int supplyCost;  
-  
-  public GameObject prefab;
 }

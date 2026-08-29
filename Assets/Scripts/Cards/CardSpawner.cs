@@ -1,24 +1,15 @@
-using System;
 using UnityEngine;
 
 public class CardSpawner : MonoBehaviour
 {
-    public Card Spawn(CardDefinition definition, Vector3 position)
+    [SerializeField] private CardView cardPrefab;
+
+    public CardView Spawn(CardDefinition definition, Vector3 position)
     {
-        GameObject obj = Instantiate(
-            definition.prefab,
-            position,
-            Quaternion.identity
-        );
-
-        if (!obj.TryGetComponent<Card>(out var card))
-        {
-          throw new InvalidOperationException(
-            $"Prefab for {definition.displayName} does not contain a Card component."
-          );
-        }
-        card.Initialize(definition);
-
-        return card;
+        CardInstance instance = new(definition);
+        CardView view = Instantiate(cardPrefab, position, Quaternion.identity);
+        view.Initialize(instance);
+        
+        return view;
     }
 }

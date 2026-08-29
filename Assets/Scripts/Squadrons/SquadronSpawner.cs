@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class SquadronSpawner : MonoBehaviour
 {
+    // [SerializeField] private CardView cardPrefab;
+
     public Squadron Spawn(SquadronDefinition definition, Vector3 position)
     {
         GameObject obj = Instantiate(

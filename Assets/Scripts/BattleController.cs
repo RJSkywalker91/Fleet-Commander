@@ -10,17 +10,18 @@ public class BattleController : MonoBehaviour
 
     [SerializeField] private CardDefinition test;
 
-    private void OnCardPlayed(Card card)
+    private void OnCardPlayed(CardView view)
     {
-      Debug.Log($"Played {card.Definition.displayName}");
-      if (card.Definition is SquadronCardDefinition squadronCard)
+      CardInstance instance = view.GetInstance();
+      Debug.Log($"Played {instance.Definition.displayName}");
+      if (instance.Definition is SquadronCardDefinition squadronCard)
       {
         Vector3 spawnPosition = battleGrid.GetCellCenter(0, 0);
         Squadron squadron = squadronSpawner.Spawn(
           squadronCard.squadron,
           spawnPosition
         );
-        Destroy(card.gameObject);
+        Destroy(view.gameObject);
         squadron.MoveTo(battleGrid.GetCellCenter(5, 2));
       }
     }
@@ -32,8 +33,8 @@ public class BattleController : MonoBehaviour
 
     public void CreateCard(CardDefinition definition)
     {
-      Card card = cardSpawner.Spawn(definition, Vector3.zero);
-      card.Played += OnCardPlayed;
+      CardView view = cardSpawner.Spawn(definition, Vector3.zero);
+      view.Played += OnCardPlayed;
     }
 
 }
