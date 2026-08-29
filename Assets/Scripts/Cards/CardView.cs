@@ -11,7 +11,7 @@ public class CardView : MonoBehaviour
         instance = card;
     }
 
-    public CardInstance GetInstance() => instance;
+    public CardDefinition GetDefinition() => instance.Definition;
 
     private void OnMouseDown()
     {

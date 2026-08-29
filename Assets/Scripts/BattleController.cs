@@ -12,13 +12,13 @@ public class BattleController : MonoBehaviour
 
     private void OnCardPlayed(CardView view)
     {
-      CardInstance instance = view.GetInstance();
-      Debug.Log($"Played {instance.Definition.displayName}");
-      if (instance.Definition is SquadronCardDefinition squadronCard)
+      CardDefinition definition = view.GetDefinition();
+      Debug.Log($"Played {definition.displayName}");
+      if (definition is SquadronCardDefinition squadronDefinition)
       {
         Vector3 spawnPosition = battleGrid.GetCellCenter(0, 0);
         Squadron squadron = squadronSpawner.Spawn(
-          squadronCard.squadron,
+          squadronDefinition.squadron,
           spawnPosition
         );
         Destroy(view.gameObject);
